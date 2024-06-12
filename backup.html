@@ -1,0 +1,84 @@
+<div class="hidden">
+    <article class="instapost">
+     <header class="instapost__header">
+       <a class="profile-img" href="user.html">
+         <img src="images/userlogo.png" />
+       </a>
+    <div class="profile-name">
+     <a class="user instalink" href="user.html">
+ 
+     </a>
+     <a class="location" href="" target="_blank">
+ 
+     </a>
+                     </div>
+                   </header>
+                   <section class="instapost__image">
+                     <a href="viewpost.html"><img class="img img-0 show" src="images/photoupload.png" width="100px" height="100px" /></a>
+                     
+                   </section>
+                   <section class="instapost__action">
+                     <button class="btn btn-like">
+                       <i class="fa fa-heart" style="font-size:20px" onclick=" likesoff(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)" ondblclick="yikes(this,`'.$row1['postby'].'`,`'.$row1['timeset'].'`)"></i>
+                     </button>
+                     <a href="viewpost.html">
+ 
+                     <button class="btn btn-comment">
+                       <svg style="font-size:20px">
+                         <use xlink:href="#comment" />
+                       </svg>
+                     </button>
+ 
+                     </a>
+                     <button class="btn btn-send">
+                       <a href="chat.html">
+                       <svg>
+                         <use xlink:href="#send" />
+                       </svg>
+                       </a>
+                     </button>
+                   </section>
+                   <section class="instapost__likes">
+                    <a class="instalink" href="" target="_blank"> others</a>
+                   </section>
+                   <section class="instapost__description">
+                     <a class="user instalink" href="" target="_blank">
+                        
+                       </a> 
+                   </section>
+                   <a class="instapost__comment-list" >
+                   </a>
+                   <section class="instapost__description">
+                     <a class="user instalink" href="user.html" target="_blank">
+                       </a> 
+                   </section>
+                   <a class="instapost__comment-list">
+                   </a>
+                   <section class="instapost__timestamp">
+                   </section>
+ 
+                   <a href="viewpost.html">
+                   <section class="instapost__add-comment">
+                     <button class="btn btn-smiley">
+                       <svg>
+                         <use xlink:href="#smiley" />
+                       </svg>
+                       
+                     </button>
+                     
+                     <textarea class="comment-input" placeholder="Add a comment..." rows="1"></textarea>
+         
+                     <button class="btn btn-send-comment" disabled="disabled">
+                         Send
+                     </button>
+                   </section>
+                   </a>
+                 </article>
+             <form action="mainpage.html" id="typing-area" method=post>
+             <input type="hidden" name="temp_postby" value="" id="temp_postby"/>
+             <input type="hidden" name="temp_timeset" value="" id="temp_timeset"/>
+             </form>
+             <script src="javascript/mainpage.js"></script> 
+ 
+ 
+ 

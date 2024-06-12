@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <title>Izina|settings</title>
+    <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo_y-removebg.png"/>
+    <script src="https://fonts.cdnfonts.com/css/billabong"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css\settings.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <style>
+body {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(10%, 20%, 10%, 50%);
+}
+
+</style>
+</head>
+<body>
+    <header>
+		<h1>Settings</h1>
+		<a href="mainpage.html"><img src="images/logo_y-removebg.png" width="50px"></a>
+	</header>
+	<main>
+		<h2>Profile</h2>
+		<form id="profile-form" method="post">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<button type="submit">Save Changes</button>
+		</form>
+		<h2>Account</h2>
+		<button id="delete-account">Delete Account</button>
+		<h2>Posts</h2>
+		<button id="create-post">Create Post</button>
+		<h2>Stories</h2>
+		<button id="start-live">Start Live Video</button>
+        <a href="index.html">
+          <button id="logout-button">Logout</button>
+        </a>
+	</main>
+
+    <script>
+        const profileForm = document.getElementById('profile-form');
+const deleteAccountButton = document.getElementById('delete-account');
+const createPostButton = document.getElementById('create-post');
+const startLiveButton = document.getElementById('start-live');
+
+profileForm.addEventListener('submit', (event) => {
+	event.preventDefault();
+	// Save profile changes
+});
+
+deleteAccountButton.addEventListener('click', () => {
+	// Delete account
+});
+
+createPostButton.addEventListener('click', () => {
+	// Create post
+});
+
+startLiveButton.addEventListener('click', () => {
+	// Start live video
+
+});
+
+const logoutButton = document.getElementById('logout-button');
+
+logoutButton.addEventListener('click', () => {
+	// Log out user
+});
+    </script>
+</body>
+</html>

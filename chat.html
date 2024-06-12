@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>|chat Page</title>
+  <link rel="icon" type="image/png" href="images/logo_y-removebg.png"/>
+  <link rel="stylesheet" type="text/css" href="css/chat.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body id="pagebody">
+  <div id="user" style="position:absolute;top:25px;left:450px;z-index:1">
+    <a href="mainpage.html">
+      <img id="pic" src="images/logo_y-removebg.png" alt=""/>
+    </a>
+    </div>
+  <main>
+    <div class="preview" id="userslist">
+      <div id="user-name">chat</div>
+
+    </div>
+    <div class="container">
+
+    <div class="chats" >
+      
+    </div>
+    <div class="input-msg">
+          <input type="text" class="from_id" id="from_id" name="from_id" value="" hidden>
+          <input type="text" class="to_id" id="to_id" name="to_id" value="" hidden>
+          <input type="text" name="message" id="send-input" placeholder="type something" onfocus="this.value='' " autofill="off"/>
+          <button>
+            <i onclick="send()" id="senbtn" class="far fa-paper-plane" style="color:white"></i>
+          </button>
+    </div>
+  </div>
+  </main>
+<script type="text/javascript" src="javascript/chat.js"></script>
+</body>
+</html>

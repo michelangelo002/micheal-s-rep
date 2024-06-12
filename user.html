@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>|user</title>
+	<meta charset="UTF-8">
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/navigation.css">
+	<link rel="icon" type="image/png" href="images/logo_y-removebg.png"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
+
+<style>
+.profile-image-container{
+    /* position: relative;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    width: 200px;
+    height: 200px;
+    display: block; */
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 170px;
+    margin-bottom: 70px;
+
+}
+.profile-image{
+    /* width: 200px;
+    height: 200px;
+    background-color: #999999;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    border-radius: 50%;
+    margin: 0px auto;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s; */
+    width: 250px;
+    height: 250px;
+    background-color: #999999;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    border-radius: 50%;
+    margin: 0px auto;
+    overflow: hidden;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.profile-image:hover{
+    border-color: #2ca8ff;
+    /* width: 200px;
+    height: 200px; */
+
+}
+.content.ct-wizard-green .profile-image:hover{
+    border-color: #05ae0e;
+    /* width: 200px;
+    height: 200px; */
+}
+.content.ct-wizard-blue .profile-image:hover{
+    border-color: #3472f7;
+    /* width: 200px;
+    height: 200px; */
+}
+.content.ct-wizard-orange .profile-image:hover{
+    border-color: #ff9500;
+    /* width: 200px;
+    height: 200px; */
+}
+.content.ct-wizard-red .profile-image:hover{
+    border-color: #ff3b30;
+    /* width: 200px;
+    height: 200px; */
+}
+.profile-image input[type="file"] {
+    /* cursor: pointer;
+    display: block;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0; */
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0 !important;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.profile-image-src{
+    width: 100%;
+    
+}
+
+</style>
+    
+</head>
+<body>
+    <a href="mainpage.html">
+      <img src="images/logo_y-removebg.png" width="30px" height="30px">
+    </a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form id="formdata">
+<div class="container">
+
+<div class="profile">
+  
+    	
+	
+        <div class="profile-image">
+            <a href="editpropic.html">
+            <img src="assets1/images/profile-1.jpg" alt="image" class="picture-src">
+            </a>
+        </div>    
+        <div class="profile-user-settings">
+
+        <h3 class="profile-user-name">micheal.xo</h3>
+        <button class="btn profile-edit-btn"> <a href="editpropic.html">Edit Profile</a></button>
+
+    </div>
+ 
+    <div class="profile-stats">
+        <ul>
+            <li><span class="profile-stat-count"></span> posts 1</li>
+            <li><span class="profile-stat-count"></span> followers 0</li>
+            <li><span class="profile-stat-count"></span> following 0</li>
+        </ul>
+
+    </div>
+    
+
+    <div class="profile-bio">
+
+        <p><span class="profile-real-name">bio</p>
+
+    </div>
+
+</div>
+<!-- End of profile section -->
+
+</div>
+<!-- End of container -->
+
+
+<main>
+
+	<div class="container">
+
+		<div class="gallery">  
+                <a href="viewpost.html">                
+					<div class="gallery-item" tabindex="0"">
+                        <img src="images/IMG_2964.WEBP" class="gallery-image"  href="viewpost.html"/>        
+							<div class="gallery-item-info">
+								<ul>
+								 <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> </li>
+								 <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i></li>
+								</ul>
+
+							</div>  
+					</div>  
+                </a>
+		</div>
+		<!-- End of gallery -->
+
+	</div>
+	<!-- End of container -->
+        
+
+    <script>
+
+
+    
+    $(document).ready(function(){  
+
+    $(".profile-edit-btn").click(function () {
+        php
+            echo; 'location.href = "edit.html';
+
+    });
+
+    $("#trash").click(function () {
+    if (confirm("Do you want to delete your account!!")) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/deleteacnt.php", true);
+        xhr.send();
+        xhr.onload = ()=>{
+        if(xhr){
+            if(xhr){
+                alert('success');
+                location.href = "index.html";
+                
+            }
+            }
+        }
+        
+      
+    } else {
+
+    }
+   
+    });
+
+    const form=document.querySelector("#formdata");
+    continueBtn=form.querySelector("#btn");
+
+    form.onsubmit = (e)=>{
+        e.preventDefault();
+    }
+
+    continueBtn.onclick = ()=>{ 
+
+        if(document.getElementById("status").value=="Follow"){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/friend.php?user_id="+document.getElementById("clickid").value, true);
+            xhr.send();
+            xhr.onload = ()=>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    console.log(data);
+                    location.href = "user.php?user_id="+document.getElementById("clickid").value;
+                }
+                }
+            }
+            return;
+        }
+        else{
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "php/unfriend.php?user_id="+document.getElementById("clickid").value, true);
+            xhr.send();
+            xhr.onload = ()=>{
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    console.log(data);
+                    location.href = "user.php?user_id="+document.getElementById("clickid").value;
+                }
+                }
+            }
+            return;
+        }
+
+    }
+
+    });
+
+
+    </script> 
+    <script>
+        {
+            $sql2 =mysqli_query($conn, "SELECT * FROM friends WHERE (followers={$_SESSION['unique_id']}) and (following={$click_id})");
+            if(mysqli_num_rows($sql2) > 0)
+            {
+                $status="Unfollow";
+                $type1="hidden";
+                $type2="submit";
+            }
+            else
+            {
+                $status="Follow";
+                $type2="hidden";
+                $type1="submit";
+            }
+        }
+        </script>
+</main>
+</body>
+</html>

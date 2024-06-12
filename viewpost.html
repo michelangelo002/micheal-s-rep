@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>|view post</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
+	<link rel="icon" type="image/png" href="images/logo_y-removebg.png"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="robots" content="noindex, follow">
+    
+<style>
+body {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #262626;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<br>
+<br>
+<br>
+<br>
+<br>  
+ <article class="instapost">
+             
+  <header class="instapost__header">                
+    <a class="profile-img" href="user.html">                
+      <img src="images/userlogo.png"/>                
+    </a>
+                    
+    <div class="profile-name">                      
+      <a class="user instalink" href="user.html">
+          profile name 
+      </a>                      
+      <a class="location" href="">
+        and your location 
+      </a>                    
+    </div>       
+                         <!--Heading Dots Section-->                            
+                         <button class="btn btn-more">
+                          <a href="mainpage.html">
+                            <img src="images/logoicon.ico" alt="">
+                          </a> 
+                        </button>
+                       
+                          <!--End Heading Dots Section-->
+                        </header>
+                     <!--Main picture-->
+                     <div class="post__on">
+                      <img src="images/IMG_2964.WEBP" width="200px" height="200px">
+                    </div>
+                
+                  <section class="instapost__action">
+                    <button class="btn btn-like">
+                      <i class="fa fa-heart" style="font-size:20px" onclick="" ondblclick=" "></i>
+                    </button>
+                    <button class="btn btn-comment">
+                      <i class="fa fa-comment" aria-hidden="true" style="font-size: 20px;"></i>
+                    </button>
+                    <button class="btn btn-send">
+                      <a href="chat.html">
+                       <i class="fa fa-send" aria-hidden="true" style="font-size: 20px;"></i>
+                      </a>
+                    </button>
+                  </section>
+                  <section class="instapost__likes">
+                    Liked by <a class="instalink" href="" target="_blank"> others</a>
+                  </section>
+                  <section class="instapost__description">
+                    <a class="user instalink" href="#" target="_blank">
+                      link your account
+                      </a> 
+                  </section>
+                  <br><br>
+                  <input type="text" class="cmtcnt" id="cmtcnt" name="cmtcnt" value="'.$result1['cmtcount'].'" hidden>
+                  like count ...
+                  <div class="commentsection" id="commentsection">
+                    
+                  </div>
+                   <section class="instapost__timestamp">
+                  time set ....
+                  </section>
+                  <section class="instapost__add-comment">
+                    <button class="btn btn-smiley">
+                    </button>
+                    <textarea class="comment-input" id="sendcomment" placeholder="Add a comment..." rows="1"></textarea>
+                    <button class="btn btn-send-comment" id="sendbutton">
+                      <i onclick="send()" class="far fa-paper-plane" style="font-size:20px"></i>
+                    </button>
+                  </section>
+                </article> 
+</body>
+<script>
+  function likes(x,y,z)
+  {
+    x.style.color = "red";
+    document.getElementById("temp_postby").value = y;
+    document.getElementById("temp_timeset").value = z;
+    const form=document.querySelector("#typing-area");
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "like.html", true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){{
+              let data = xhr.response;
+               php
+                echo;'location.href = "';
+
+            }
+              
+          }
+      }
+    }
+    let formData = new FormData(form);
+    xhr.send(formData);
+  }
+
+  function likesoff(x,y,z)
+  {
+    x.style.color = "black";
+  }
+
+
+
+commentsection=document.querySelector('#commentsection');
+
+
+var myVar=setInterval(getcomments,3000);
+
+function getcomments(){
+    post_id = location.search.slice(1).split("&")[0].split("=")[1];
+    user_id= location.search.slice(1).split("&")[1].split("=")[1];
+    cmtcnt=document.getElementById('cmtcnt').value;
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "get-comments.html"+post_id+"&user_id="+user_id, true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+            let data = xhr.response;
+            commentsection.innerHTML = data;
+            }
+          }
+      }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // var formData = new FormData();
+    // formData.append('post_id', post_id);
+    // formData.append('user_id',user_id);
+    xhr.send();
+}
+
+function del(x,y,z)
+  {
+   
+    if (confirm("Do you want to delete the Post!!")) {
+      clearInterval(myVar);
+      document.getElementById("temp_postby").value = y;
+      document.getElementById("temp_timeset").value = z;
+      const form=document.querySelector("#typing-area");
+      post_id = location.search.slice(1).split("&")[0].split("=")[1];
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "php/delete.php?post_id="+post_id, true);
+      xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              let data = xhr.response;
+              php
+                 echo; 'location.href = "mainpage.html"';
+          }
+          }
+      }
+      let formData = new FormData(form);
+      xhr.send();
+    }else{
+    
+    }
+  }
+
+
+function send()
+{
+    post_id = location.search.slice(1).split("&")[0].split("=")[1];
+    var message=document.getElementById('sendcomment').value;
+    var commentbyid=document.getElementById('commentby').value;
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "php/insert-comment.php?post_id="+post_id+"&message="+message+"&commentby="+commentbyid, true);
+    xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+              document.getElementById("sendcomment").value="";
+              data=xhr.response;
+              console.log(data);
+          }
+      }
+    }
+    xhr.send();
+}
+
+const commentSendBtn = document.querySelector(".btn-send-comment");
+const commentInput = document.querySelector(".comment-input");
+commentInput.addEventListener("input", function (e) {
+  if (e.target.value.length > 0) {
+    commentSendBtn.setAttribute("disabled", "");
+  } else {
+    commentSendBtn.setAttribute("disabled", "disabled");
+  }
+});
+  
+</script>
+</html>
